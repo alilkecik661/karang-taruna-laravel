@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class PesanKontak extends Model
+{
+    use HasFactory;
+
+    protected $table = 'pesan_kontak';
+
+    protected $fillable = [
+        'nama',
+        'email',
+        'subjek',
+        'isi',
+        'sudah_dibaca',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'sudah_dibaca' => 'boolean',
+        ];
+    }
+}
